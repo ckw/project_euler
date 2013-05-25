@@ -1,2 +1,1 @@
-project_euler
-=============
+image:: http://projecteuler.net/profile/ckw.png
