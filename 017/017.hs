@@ -1,5 +1,3 @@
-import System.Environment
-
 main = print . length . filter (not . flip elem ['-',' ']) . concat . fmap toWords $ [1..1000]
 
 toWords n | n ==  0 = "zero"
