@@ -10,10 +10,6 @@
        , 93, 38, 53, 60, 4, 23
        ]
 
-def max(x, y)
-  x > y ? x : y
-end
-
 def max_path(index, total, path, depth)
   if @tri.length < (index + 1)
     if total > @global_max
