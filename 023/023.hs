@@ -18,7 +18,7 @@ pDivisors :: Integral a => a -> [a]
 pDivisors n = let d = concat divs
                   d' = case d of
                            (x:y:xs) -> if x == y then y:xs else d
-                           z@_ -> z
+                           z -> z
               in 1 : d'
     where divs = let r = floor $ sqrt $ fromIntegral n
                  in fmap (divisible n) [r, r - 1..2]
