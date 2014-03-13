@@ -12,4 +12,4 @@ one in value, and containing two digits in the numerator and denominator.
 If the product of these four fractions is given in its lowest common terms,
 find the value of the denominator.
 
-http://projecteuler.net/problem=032
+http://projecteuler.net/problem=033
