@@ -10,7 +10,7 @@ main = print . succ . succ . length . filter circular . M.keys $ primes'
 
 circular :: Int -> Bool
 circular n = let cs = show n
-             in (null $ cs `intersect` ['2', '4', '5', '6', '8']) &&
+             in (null $ cs `intersect` ['0','2', '4', '5', '6', '8']) &&
                 (all (isJust . flip M.lookup primes') . map read . rotations $ cs)
 
 primes' :: M.IntMap Bool
