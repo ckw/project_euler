@@ -2,7 +2,7 @@ import Control.Monad  (guard)
 import Data.IntSet (fromList, toList, (\\))
 
 --2.3 seconds. meh
-main = do print $ foldl1 (+) $ toList $ fromList [1..28123] \\ abundantSums
+main = print $ foldl1 (+) $ toList $ fromList [1..28123] \\ abundantSums
 
 isAbundant n = n < (sum $ pDivisors n)
 
