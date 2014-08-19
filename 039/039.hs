@@ -5,7 +5,7 @@ import           Control.Monad (guard)
 
 --BRUTE FORCE
 main :: IO ()
-main = print $ maximumBy (comparing snd) $ M.toList counts
+main = print . fst . maximumBy (comparing snd) . M.toList $ counts
 
 counts :: M.IntMap Int
 counts = foldr incr M.empty (candidates 1000)
@@ -19,9 +19,8 @@ candidates n = do a <- [1..n - 2]
                   c <- [1..n]
                   guard (c > b)
                   guard (c > a)
-                  guard (b > a)
-                  guard (a + b + c < 1001)
-                  guard (abs (sqrt' (a ^ 2 + b ^ 2) - sqrt' (c ^ 2)) < eps)
-                  return (a + b + c)
-  where sqrt' = sqrt . fromIntegral
-        eps = 0.001 :: Double
+                  guard (b >= a)
+                  let s = a + b + c
+                  guard (s < 1001)
+                  guard (a * a + b * b == c * c)
+                  return s
